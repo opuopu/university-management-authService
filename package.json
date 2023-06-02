@@ -8,7 +8,7 @@
     "lint:cheek": "eslint --ignore-path .eslintignore --ext .js,.ts .",
     "lint:fix": "eslint . --fix",
     "prettier:cheek": "prettier --ignore-path .gitignore --write \"**/*.+(js|ts|json)\"",
-    "prettier:fix":"prettier . --write",
+    "prettier:fix": "prettier . --write",
     "lint-prettier": "npm run lint:cheek && npm run prettier:cheek",
     "test": "echo \"Error: no test specified\" && exit 1",
     "prepare": "husky install"
