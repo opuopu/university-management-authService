@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 3
+    },
+    "auditLog": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\success\\.110fb193e5315af42baa228e87ac70becd296cb2-audit.json",
+    "files": [
+        {
+            "date": 1685719672598,
+            "name": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\success\\university-s-2023-06-02-21-success.log",
+            "hash": "cd8e7e464383213be448d58849f4ee2a85a2c07710ac60dfeb9f4e02e449cd7d"
+        }
+    ],
+    "hashType": "sha256"
+}
