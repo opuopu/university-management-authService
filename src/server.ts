@@ -4,7 +4,7 @@ import config from './config/index'
 import { errorLogger, infoLogger } from './shared/logger'
 async function main() {
   try {
-    await mongoose.connec(config.dbUrl as string)
+    await mongoose.connect(config.dbUrl as string)
     app.listen(config.port, () => {
       infoLogger.info(`application listening on port ${config.port}`)
     })
