@@ -26,7 +26,7 @@ export const infoLogger = winston.createLogger({
       datePattern: 'YYYY-MM-DD-HH',
       zippedArchive: true,
       maxSize: '20m',
-      maxFiles: '3d',
+      maxFiles: '1d',
     }),
   ],
 })
@@ -42,11 +42,16 @@ export const errorLogger = winston.createLogger({
     new winston.transports.Console(),
 
     new DailyRotateFile({
-      filename: 'logs/errors/university-%DATE%-error.log',
+      filename: path.join(
+        process.cwd(),
+        'logs',
+        'errors',
+        'university-s-%DATE%-error.log'
+      ),
       datePattern: 'YYYY-MM-DD-HH',
       zippedArchive: true,
       maxSize: '20m',
-      maxFiles: '3d',
+      maxFiles: '1d',
     }),
   ],
 })

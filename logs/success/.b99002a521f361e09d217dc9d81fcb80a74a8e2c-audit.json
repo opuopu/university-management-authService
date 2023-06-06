@@ -1,0 +1,25 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 1
+    },
+    "auditLog": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\success\\.b99002a521f361e09d217dc9d81fcb80a74a8e2c-audit.json",
+    "files": [
+        {
+            "date": 1686030059317,
+            "name": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\success\\university-s-2023-06-06-11-success.log",
+            "hash": "85dc02a21a1e2500fb7a628d6b4ec00959f0420f48cd6439c1d9008a84ab62c9"
+        },
+        {
+            "date": 1686041521300,
+            "name": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\success\\university-s-2023-06-06-14-success.log",
+            "hash": "24c120a66cdb3be4ccb1ae3e801bfc56bde5366d0bb72f589a0c4c3d8afdaf6b"
+        },
+        {
+            "date": 1686042021331,
+            "name": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\success\\university-s-2023-06-06-15-success.log",
+            "hash": "2ff0f3cb94e0e723110a94459ae0fb1e9a906d3ca6519d1ad5de49c815395ae3"
+        }
+    ],
+    "hashType": "sha256"
+}
