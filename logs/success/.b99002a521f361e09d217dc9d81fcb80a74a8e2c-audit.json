@@ -34,6 +34,16 @@
             "date": 1686132267392,
             "name": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\success\\university-s-2023-06-07-16-success.log",
             "hash": "1230dd35bcdde137ce86bdcfe9f04ec2ee09ec6c315925168bb909978fcf52c4"
+        },
+        {
+            "date": 1686148972310,
+            "name": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\success\\university-s-2023-06-07-20-success.log",
+            "hash": "06a76e16dcaf57cfcde759062bf9ea8bb0e2eb20b92e4dfe41db468fcd7d1293"
+        },
+        {
+            "date": 1686150002688,
+            "name": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\success\\university-s-2023-06-07-21-success.log",
+            "hash": "be4ed878b265f1bc2a03bbd84952bb73443145effc14ddad55a0c7efac028ca4"
         }
     ],
     "hashType": "sha256"
