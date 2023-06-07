@@ -15,7 +15,7 @@ export type Month =
 export type title = 'Autumn' | 'Summer' | 'Fall'
 export type code = '01' | '02' | '03'
 export type IAcamadeciSemester = {
-  title: 'Autumn' | 'Summer' | 'Fall'
+  title: title
   year: number
   code: code
   startMonth: Month

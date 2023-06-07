@@ -17,3 +17,10 @@ export const AcademicMonths: Month[] = [
 export const AcademicCodes: code[] = ['01', '02', '03']
 
 export const AcademicTitles: title[] = ['Autumn', 'Fall', 'Summer']
+export const academicsemesterTitleCodeMapper: {
+  [key: string]: string
+} = {
+  Autumn: '01',
+  Summer: '02',
+  Fall: '03',
+}

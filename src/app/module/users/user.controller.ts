@@ -5,9 +5,10 @@ export const createUsers: RequestHandler = async (req, res, next) => {
   try {
     // await userSchema.parseAsync(req)
     const userdata = req.body
+
     const result = await createUser(userdata)
     res.status(200).send(result)
-  } catch (err) {
-    next(err)
+  } catch (error) {
+    next(error)
   }
 }

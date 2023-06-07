@@ -8,22 +8,18 @@ import {
 const AcademicSemesterZodSchemas = z.object({
   body: z.object({
     title: z.enum([...AcademicTitles] as [string, ...string[]], {
-      required_error: 'Title is Required',
+      required_error: 'Title is required',
     }),
     year: z.number({
-      required_error: 'Year is Required',
+      required_error: 'Year is required ',
     }),
-    code: z.enum([...AcademicCodes] as [string, ...string[]], {
-      required_error: 'code is required',
-    }),
-    starstartMontht: z.enum([...AcademicMonths] as [string, ...string[]], {
-      required_error: 'month is required',
+    code: z.enum([...AcademicCodes] as [string, ...string[]]),
+    startMonth: z.enum([...AcademicMonths] as [string, ...string[]], {
+      required_error: 'Start month is needed',
     }),
     endMonth: z.enum([...AcademicMonths] as [string, ...string[]], {
-      required_error: 'end month is required',
+      required_error: 'End month is needed',
     }),
   }),
 })
-export const AcademicSemestervalidation = {
-  AcademicSemesterZodSchemas,
-}
+export default AcademicSemesterZodSchemas
