@@ -12,10 +12,9 @@ app.use('/api/v1/users', router)
 
 // global error handler
 
-// app.get('/', async(req, res) => {
-// // res.send('database connected')
-// throw new Error('testing')
-
-// })
+app.get('/', async (req, res) => {
+  // res.send('database connected')
+  res.send('working ')
+})
 
 app.use(globalErrorHandler)

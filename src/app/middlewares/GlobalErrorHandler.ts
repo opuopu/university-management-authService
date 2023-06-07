@@ -1,20 +1,21 @@
 import { ErrorRequestHandler } from 'express'
+import { ZodError } from 'zod'
 
 import config from '../../config'
 import Apierror from '../../error/Apierror'
 import handleValidationError from '../../error/handleValidationError '
+
+import handleZodError from '../../error/handleZodError'
+import { IGenericErrorMessage } from '../../interface/error'
 const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
-  type IGenericerror = {
-    path: string
-    message: string
-  }
   // handle validation error
 
   let statusCode = 500
   let message = 'internal server error'
-  let erromessages: IGenericerror[] = []
-  if (error?.name === 'handleValidationError') {
+  let erromessages: IGenericErrorMessage[] = []
+  if (error?.name === 'ValidationError') {
     const simplifiederror = handleValidationError(error)
+
     statusCode = simplifiederror.statusCode
     message = simplifiederror.message
     erromessages = simplifiederror.errormessages
@@ -29,6 +30,11 @@ const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
           },
         ]
       : []
+  } else if (error instanceof ZodError) {
+    const simplifiederror = handleZodError(error)
+    statusCode = simplifiederror.statusCode
+    message = simplifiederror.message
+    erromessages = simplifiederror.errormessages
   } else if (error instanceof Error) {
     message = error?.message
     erromessages = error?.message

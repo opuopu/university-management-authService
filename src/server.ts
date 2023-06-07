@@ -7,6 +7,7 @@ import { errorLogger, infoLogger } from './shared/logger'
 // uncaought error
 process.on('uncaughtException', err => {
   errorLogger.error(err)
+
   process.exit(1)
 })
 
