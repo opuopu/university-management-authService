@@ -1,5 +1,6 @@
 import cors from 'cors'
-import express, { Application } from 'express'
+import express, { Application, NextFunction, Request, Response } from 'express'
+import httpStatus from 'http-status'
 import globalErrorHandler from './app/middlewares/GlobalErrorHandler'
 import routers from './app/routes'
 export const app: Application = express()
@@ -15,6 +16,21 @@ app.use('/api/v1', routers)
 app.get('/', async (req, res) => {
   // res.send('database connected')
   res.send('working ')
+})
+
+// NOT FOUND ERROR
+app.use((req: Request, res: Response, next: NextFunction) => {
+  res.status(httpStatus.NOT_FOUND).json({
+    success: false,
+    message: 'not found',
+    errormessages: [
+      {
+        path: req.originalUrl,
+        message: 'api not found',
+      },
+    ],
+  })
+  next()
 })
 
 app.use(globalErrorHandler)

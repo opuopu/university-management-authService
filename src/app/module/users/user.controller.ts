@@ -7,7 +7,7 @@ export const createUsers: RequestHandler = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
     // await userSchema.parseAsync(req)
     const userdata = req.body
-    next()
+
     const result = await createUser(userdata)
     sendResponse(res, {
       statusCode: 200,
@@ -15,5 +15,6 @@ export const createUsers: RequestHandler = catchAsync(
       message: 'user  created',
       data: result,
     })
+    next()
   }
 )
