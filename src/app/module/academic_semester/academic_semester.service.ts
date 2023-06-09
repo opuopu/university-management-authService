@@ -1,7 +1,9 @@
 import httpStatus from 'http-status'
+import { SortOrder } from 'mongoose'
 import Apierror from '../../../error/Apierror'
 import IGenericResponse from '../../../interface/IgenericResponse'
 import { IgetAllSemesterOptios } from '../../../interface/pagination'
+import calculatePagination from '../../../shared/paginationHelper'
 import { academicsemesterTitleCodeMapper } from './academic_semester.Constants'
 import { IAcamadeciSemester } from './academic_semester.interface'
 import AcamedicSemester from './academic_semester.model'
@@ -23,9 +25,19 @@ const createsemester = async (
 const getAllSemesters = async (
   payload: IgetAllSemesterOptios
 ): Promise<IGenericResponse<IAcamadeciSemester[]>> => {
-  const { page = 1, limit = 10 } = payload
+  // const { page = 1, limit = 10 } = payload
+  const invoked = calculatePagination(payload)
+  const { page, limit, sortBy, sortOrder } = invoked
+  const sort: { [key: string]: SortOrder } = {}
+  if (sortBy && sortOrder) {
+    sort[sortBy] = sortOrder
+  }
+
   const skip = (page - 1) * limit
-  const result = await AcamedicSemester.find().sort().skip(skip).limit(limit)
+  const result = await AcamedicSemester.find()
+    .sort(sort)
+    .skip(skip)
+    .limit(limit)
   const total = await AcamedicSemester.countDocuments()
   return {
     meta: {
