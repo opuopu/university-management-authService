@@ -1,6 +1,6 @@
-import { NextFunction, Request, Response } from 'express'
+import { Request, Response } from 'express'
 import httpStatus from 'http-status'
-import { items } from '../../../constants/pagination-items'
+import { filterableField, items } from '../../../constants/pagination-items'
 import { IgetAllSemesterOptios } from '../../../interface/pagination'
 import catchAsync from '../../../shared/catchAsync'
 import pick from '../../../shared/pick'
@@ -22,24 +22,22 @@ export const createAcademicSemesterM = catchAsync(
 )
 // get
 
-const getAllSemester = catchAsync(
-  async (req: Request, res: Response, next: NextFunction) => {
-    const filters = pick(req.query, ['searchTerm'])
-    const paginationOptions: IgetAllSemesterOptios = pick(req.query, items)
-    const result = await GetSemesterServices.getAllSemesters(
-      paginationOptions,
-      filters
-    )
-    sendResponse(res, {
-      statusCode: httpStatus.OK,
-      success: true,
-      meta: result.meta,
-      message: 'Getting all semesters',
-      data: result.data,
-    })
-    next()
-  }
-)
+const getAllSemester = catchAsync(async (req: Request, res: Response) => {
+  const filters = pick(req.query, filterableField)
+  const paginationOptions: IgetAllSemesterOptios = pick(req.query, items)
+  const result = await GetSemesterServices.getAllSemesters(
+    paginationOptions,
+    filters
+  )
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    meta: result.meta,
+    message: 'Getting all semesters',
+    data: result.data,
+  })
+  // next()
+})
 
 const AcademicSemesterController = {
   createAcademicSemesterM,

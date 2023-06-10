@@ -29,9 +29,12 @@ const getAllSemesters = async (
 ): Promise<IGenericResponse<IAcamadeciSemester[]>> => {
   // const { page = 1, limit = 10 } = payload
   const invoked = calculatePagination(payload)
-  const { searchTerm } = filters
-  const academicSemesterSearchFields = ['titile', 'year', 'code']
+  const { searchTerm, ...filtersField } = filters
+
+  const academicSemesterSearchFields = ['title', 'year', 'code']
+
   const andCondition = []
+
   if (searchTerm) {
     andCondition.push({
       $or: academicSemesterSearchFields.map(field => ({
@@ -39,6 +42,14 @@ const getAllSemesters = async (
           $regex: searchTerm,
           $options: 'i',
         },
+      })),
+    })
+  }
+  // console.log(andCondition)
+  if (Object.keys(filtersField).length) {
+    andCondition.push({
+      $and: Object.entries(filtersField).map(([field, value]) => ({
+        [field]: value,
       })),
     })
   }
@@ -50,7 +61,8 @@ const getAllSemesters = async (
   }
 
   const skip = (page - 1) * limit
-  const result = await AcamedicSemester.find({ $and: andCondition })
+  const WhereCondtion = andCondition.length > 0 ? { $and: andCondition } : {}
+  const result = await AcamedicSemester.find(WhereCondtion)
     .sort(sort)
     .skip(skip)
     .limit(limit)
