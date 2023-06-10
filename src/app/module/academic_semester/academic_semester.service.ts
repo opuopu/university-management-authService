@@ -1,6 +1,7 @@
 import httpStatus from 'http-status'
 import { SortOrder } from 'mongoose'
 import Apierror from '../../../error/Apierror'
+import IacademicSemesterFilters from '../../../interface/IacademicsemesterFilters'
 import IGenericResponse from '../../../interface/IgenericResponse'
 import { IgetAllSemesterOptios } from '../../../interface/pagination'
 import calculatePagination from '../../../shared/paginationHelper'
@@ -23,10 +24,25 @@ const createsemester = async (
 // get all semester
 
 const getAllSemesters = async (
-  payload: IgetAllSemesterOptios
+  payload: IgetAllSemesterOptios,
+  filters: IacademicSemesterFilters
 ): Promise<IGenericResponse<IAcamadeciSemester[]>> => {
   // const { page = 1, limit = 10 } = payload
   const invoked = calculatePagination(payload)
+  const { searchTerm } = filters
+  const academicSemesterSearchFields = ['titile', 'year', 'code']
+  const andCondition = []
+  if (searchTerm) {
+    andCondition.push({
+      $or: academicSemesterSearchFields.map(field => ({
+        [field]: {
+          $regex: searchTerm,
+          $options: 'i',
+        },
+      })),
+    })
+  }
+
   const { page, limit, sortBy, sortOrder } = invoked
   const sort: { [key: string]: SortOrder } = {}
   if (sortBy && sortOrder) {
@@ -34,7 +50,7 @@ const getAllSemesters = async (
   }
 
   const skip = (page - 1) * limit
-  const result = await AcamedicSemester.find()
+  const result = await AcamedicSemester.find({ $and: andCondition })
     .sort(sort)
     .skip(skip)
     .limit(limit)

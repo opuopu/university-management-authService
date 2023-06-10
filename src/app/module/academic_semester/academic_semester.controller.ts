@@ -8,7 +8,7 @@ import sendResponse from '../../../shared/sendResponse'
 import GetSemesterServices from './academic_semester.service'
 
 export const createAcademicSemesterM = catchAsync(
-  async (req: Request, res: Response, next: NextFunction) => {
+  async (req: Request, res: Response) => {
     const result = await GetSemesterServices.createsemester(req.body)
 
     sendResponse(res, {
@@ -17,14 +17,19 @@ export const createAcademicSemesterM = catchAsync(
       message: 'semester created',
       data: result,
     })
-    next()
+    // next()
   }
 )
 // get
+
 const getAllSemester = catchAsync(
   async (req: Request, res: Response, next: NextFunction) => {
+    const filters = pick(req.query, ['searchTerm'])
     const paginationOptions: IgetAllSemesterOptios = pick(req.query, items)
-    const result = await GetSemesterServices.getAllSemesters(paginationOptions)
+    const result = await GetSemesterServices.getAllSemesters(
+      paginationOptions,
+      filters
+    )
     sendResponse(res, {
       statusCode: httpStatus.OK,
       success: true,

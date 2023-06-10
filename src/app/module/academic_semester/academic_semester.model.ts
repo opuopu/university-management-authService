@@ -1,4 +1,5 @@
-import status from 'http-status'
+// import status from 'http-status'
+import httpStatus from 'http-status'
 import { Schema, model } from 'mongoose'
 import Apierror from '../../../error/Apierror'
 import { AcademicMonths } from './academic_semester.Constants'
@@ -9,7 +10,7 @@ import {
 
 const AcademicSemesterSchema = new Schema<IAcamadeciSemester>({
   title: { required: true, type: String, enum: ['Autumn', 'Summer', 'Fall'] },
-  year: { required: true, type: Number },
+  year: { required: true, type: String },
   code: {
     required: true,
     type: String,
@@ -29,7 +30,10 @@ AcademicSemesterSchema.pre('save', async function (next) {
     },
   ])
   if (isExist.length > 0) {
-    throw new Apierror(status.CONFLICT, 'academic semester is  already exists')
+    throw new Apierror(
+      httpStatus.CONFLICT,
+      'academic semester is  already exists'
+    )
   } else {
     next()
   }
