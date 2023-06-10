@@ -1,0 +1,36 @@
+{
+  message: 'database connected',
+  level: 'info',
+  timestamp: '2023-06-10T17:05:57.654Z',
+  label: 'PH'
+}
+{
+  message: 'application listening on port 5000',
+  level: 'info',
+  timestamp: '2023-06-10T17:05:57.710Z',
+  label: 'PH'
+}
+{
+  message: 'database connected',
+  level: 'info',
+  timestamp: '2023-06-10T17:07:08.619Z',
+  label: 'PH'
+}
+{
+  message: 'application listening on port 5000',
+  level: 'info',
+  timestamp: '2023-06-10T17:07:08.657Z',
+  label: 'PH'
+}
+{
+  message: 'database connected',
+  level: 'info',
+  timestamp: '2023-06-10T17:10:12.515Z',
+  label: 'PH'
+}
+{
+  message: 'application listening on port 5000',
+  level: 'info',
+  timestamp: '2023-06-10T17:10:12.532Z',
+  label: 'PH'
+}
