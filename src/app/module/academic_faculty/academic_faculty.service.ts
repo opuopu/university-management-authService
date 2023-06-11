@@ -99,10 +99,25 @@ const update_Faculty = async (
   }
 }
 
+// delete
+const delete_Faculty = async (
+  id: string
+): Promise<{ data: IAcademicFaculty | null }> => {
+  const result = await AcamedicFaculty.findByIdAndDelete(id)
+
+  if (!result) {
+    throw new Apierror(httpStatus.BAD_REQUEST, 'faculty not found')
+  }
+
+  return {
+    data: result,
+  }
+}
 const AcademicFacultyServices = {
   createFaculty,
   getAllfacultys,
   getSingle_Faculty,
   update_Faculty,
+  delete_Faculty,
 }
 export default AcademicFacultyServices
