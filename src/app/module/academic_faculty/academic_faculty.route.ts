@@ -17,5 +17,6 @@ router.patch(
   validateRequest(AcademicFacultyZodValidation.updatefacultyZodSchema),
   AcademicFacultyController.updateFaculty
 )
+router.delete('/delete/:id', AcademicFacultyController.deleteFaculty)
 
 export const FacultyRoute = router
