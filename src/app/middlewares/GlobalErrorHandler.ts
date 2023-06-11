@@ -1,4 +1,4 @@
-import { ErrorRequestHandler } from 'express'
+import { ErrorRequestHandler, NextFunction } from 'express'
 import { ZodError } from 'zod'
 import config from '../../config'
 import Apierror from '../../error/Apierror'
@@ -7,7 +7,12 @@ import handleValidationError from '../../error/handleValidationError '
 
 import handleZodError from '../../error/handleZodError'
 import { IGenericErrorMessage } from '../../interface/error'
-const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
+const globalErrorHandler: ErrorRequestHandler = (
+  error,
+  req,
+  res,
+  next: NextFunction
+) => {
   // handle validation error
 
   let statusCode = 500

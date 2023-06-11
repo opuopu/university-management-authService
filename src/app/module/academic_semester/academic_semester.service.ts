@@ -109,10 +109,26 @@ const updateSemesterS = async (
   }
 }
 
+// delete
+
+const deleteSemesters = async (
+  id: string
+): Promise<{ data: IAcamadeciSemester | null }> => {
+  const result = await AcamedicSemester.findByIdAndDelete(id)
+
+  if (!result) {
+    throw new Apierror(httpStatus.BAD_REQUEST, 'semester not found')
+  }
+
+  return {
+    data: result,
+  }
+}
 const GetSemesterServices = {
   createsemester,
   getAllSemesters,
   get_single_semester,
   updateSemesterS,
+  deleteSemesters,
 }
 export default GetSemesterServices

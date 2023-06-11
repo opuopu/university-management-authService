@@ -1,4 +1,4 @@
 type IacademicSemesterFilters = {
-  searchTerm: string
+  searchTerm?: string
 }
 export default IacademicSemesterFilters

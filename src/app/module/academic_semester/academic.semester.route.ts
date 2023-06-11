@@ -10,6 +10,7 @@ router.post(
   validateRequest(AcademicZodvaliDation.createAcademicSemesterZodSchema),
   AcademicSemesterController.createAcademicSemesterM
 )
+router.delete('/delete/:id', AcademicSemesterController.deleteSemester)
 router.get('/getsemesters', AcademicSemesterController.getAllSemester)
 router.get('/getsemester/:id', AcademicSemesterController.getSingleSemester)
 router.patch(

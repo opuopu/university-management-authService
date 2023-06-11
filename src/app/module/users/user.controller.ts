@@ -1,10 +1,10 @@
-import { NextFunction, Request, RequestHandler, Response } from 'express'
+import { Request, RequestHandler, Response } from 'express'
 import catchAsync from '../../../shared/catchAsync'
 import sendResponse from '../../../shared/sendResponse'
 import { createUser } from './user.service'
 
 export const createUsers: RequestHandler = catchAsync(
-  async (req: Request, res: Response, next: NextFunction) => {
+  async (req: Request, res: Response) => {
     // await userSchema.parseAsync(req)
     const userdata = req.body
 
@@ -15,6 +15,5 @@ export const createUsers: RequestHandler = catchAsync(
       message: 'user  created',
       data: result,
     })
-    next()
   }
 )
