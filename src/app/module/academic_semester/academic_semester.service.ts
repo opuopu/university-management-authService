@@ -3,7 +3,7 @@ import { SortOrder } from 'mongoose'
 import Apierror from '../../../error/Apierror'
 import IacademicSemesterFilters from '../../../interface/IacademicsemesterFilters'
 import IGenericResponse from '../../../interface/IgenericResponse'
-import { IgetAllSemesterOptios } from '../../../interface/pagination'
+import { IgetAllSemesterOptions } from '../../../interface/pagination'
 import calculatePagination from '../../../shared/paginationHelper'
 import { academicsemesterTitleCodeMapper } from './academic_semester.Constants'
 import { IAcamadeciSemester } from './academic_semester.interface'
@@ -24,7 +24,7 @@ const createsemester = async (
 // get all semester
 
 const getAllSemesters = async (
-  payload: IgetAllSemesterOptios,
+  payload: IgetAllSemesterOptions,
   filters: IacademicSemesterFilters
 ): Promise<IGenericResponse<IAcamadeciSemester[]>> => {
   // const { page = 1, limit = 10 } = payload
