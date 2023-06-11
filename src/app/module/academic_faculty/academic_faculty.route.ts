@@ -10,6 +10,7 @@ router.post(
   AcademicFacultyController.createAcademicFaculty
 )
 
-router.get('/getAcademicFaculty')
+router.get('/getAcademicFaculty', AcademicFacultyController.getAllFaculty)
+router.get('/getsingleFaculty/:id', AcademicFacultyController.getSingleFaculty)
 
 export const FacultyRoute = router

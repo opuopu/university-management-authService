@@ -8,6 +8,6 @@ export type AcademicFacultyModel = Model<
   IAcademicFaculty,
   Record<string, unknown>
 >
-export type IgetAllFacultyOptios = {
+export type IgetFacultyOptions = {
   searchTerm?: string
 }

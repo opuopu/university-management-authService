@@ -1,10 +1,12 @@
 import { SortOrder } from 'mongoose'
-import IacademicSemesterFilters from '../../../interface/IacademicsemesterFilters'
 import IGenericResponse from '../../../interface/IgenericResponse'
 import { IgetAllfacultyOptions } from '../../../interface/pagination'
 import calculatePagination from '../../../shared/paginationHelper'
 import { academicFacultyFilterableFields } from './academic_faculty.constants'
-import { IAcademicFaculty } from './academic_faculty.interface'
+import {
+  IAcademicFaculty,
+  IgetFacultyOptions,
+} from './academic_faculty.interface'
 import AcamedicFaculty from './academic_faculty.model'
 const createFaculty = async (
   payload: IAcademicFaculty
@@ -12,9 +14,10 @@ const createFaculty = async (
   const result = await AcamedicFaculty.create(payload)
   return result
 }
+
 const getAllfacultys = async (
   payload: IgetAllfacultyOptions,
-  filters: IacademicSemesterFilters
+  filters: IgetFacultyOptions
 ): Promise<IGenericResponse<IAcademicFaculty[]>> => {
   // const { page = 1, limit = 10 } = payload
 
@@ -63,8 +66,19 @@ const getAllfacultys = async (
   }
 }
 
+// single
+const getSingle_Faculty = async (
+  id: string
+): Promise<{ data: IAcademicFaculty | null }> => {
+  const result = await AcamedicFaculty.findById({ _id: id })
+  return {
+    data: result,
+  }
+}
+
 const AcademicFacultyServices = {
   createFaculty,
   getAllfacultys,
+  getSingle_Faculty,
 }
 export default AcademicFacultyServices
