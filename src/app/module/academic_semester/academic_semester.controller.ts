@@ -6,7 +6,7 @@ import catchAsync from '../../../shared/catchAsync'
 import pick from '../../../shared/pick'
 import sendResponse from '../../../shared/sendResponse'
 import GetSemesterServices from './academic_semester.service'
-
+// create
 export const createAcademicSemesterM = catchAsync(
   async (req: Request, res: Response) => {
     const result = await GetSemesterServices.createsemester(req.body)
@@ -39,8 +39,34 @@ const getAllSemester = catchAsync(async (req: Request, res: Response) => {
   // next()
 })
 
+const getSingleSemester = catchAsync(async (req: Request, res: Response) => {
+  const { id } = req.params
+  const result = await GetSemesterServices.get_single_semester(id)
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'Getting single semesters',
+    data: result.data,
+  })
+})
+
+// updateSemester
+const updateSemester = catchAsync(async (req: Request, res: Response) => {
+  const { id } = req.params
+  const updatedData = req.body
+  const result = await GetSemesterServices.updateSemesterS(id, updatedData)
+  sendResponse(res, {
+    statusCode: httpStatus.OK,
+    success: true,
+    message: 'updated',
+    data: result.data,
+  })
+})
+
 const AcademicSemesterController = {
   createAcademicSemesterM,
   getAllSemester,
+  getSingleSemester,
+  updateSemester,
 }
 export default AcademicSemesterController

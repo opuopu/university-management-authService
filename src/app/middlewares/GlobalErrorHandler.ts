@@ -1,8 +1,8 @@
 import { ErrorRequestHandler } from 'express'
 import { ZodError } from 'zod'
-
 import config from '../../config'
 import Apierror from '../../error/Apierror'
+import handleCastError from '../../error/handleCastError'
 import handleValidationError from '../../error/handleValidationError '
 
 import handleZodError from '../../error/handleZodError'
@@ -16,6 +16,11 @@ const globalErrorHandler: ErrorRequestHandler = (error, req, res, next) => {
   if (error?.name === 'ValidationError') {
     const simplifiederror = handleValidationError(error)
 
+    statusCode = simplifiederror.statusCode
+    message = simplifiederror.message
+    erromessages = simplifiederror.errormessages
+  } else if (error?.name === 'CastError') {
+    const simplifiederror = handleCastError(error)
     statusCode = simplifiederror.statusCode
     message = simplifiederror.message
     erromessages = simplifiederror.errormessages

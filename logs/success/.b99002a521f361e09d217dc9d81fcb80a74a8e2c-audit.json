@@ -29,6 +29,21 @@
             "date": 1686416749019,
             "name": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\success\\university-s-2023-06-10-23-success.log",
             "hash": "159f4f7385b3a13b0ead349867f015ee5072adfe466d8e728085ef396a94ecc5"
+        },
+        {
+            "date": 1686420262050,
+            "name": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\success\\university-s-2023-06-11-00-success.log",
+            "hash": "b6eee2603deeae780c0213dc75df3db97299ba54a82dc753ec5f9bf85904818f"
+        },
+        {
+            "date": 1686475532663,
+            "name": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\success\\university-s-2023-06-11-15-success.log",
+            "hash": "4e8c93332f96def2e03b5f9e8289a5a731e2a191d1c8b1f7a073c76d246c7735"
+        },
+        {
+            "date": 1686477628694,
+            "name": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\success\\university-s-2023-06-11-16-success.log",
+            "hash": "fd22fd03138ddf57857cf163cdb4f687dbad41e74be1eb289535ecb306853a0c"
         }
     ],
     "hashType": "sha256"

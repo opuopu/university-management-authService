@@ -77,8 +77,42 @@ const getAllSemesters = async (
   }
 }
 
+// getSingle
+const get_single_semester = async (
+  id: string
+): Promise<{ data: IAcamadeciSemester | null }> => {
+  const result = await AcamedicSemester.findById({ _id: id })
+  return {
+    data: result,
+  }
+}
+// updatedData
+const updateSemesterS = async (
+  id: string,
+  payload: Partial<IAcamadeciSemester>
+): Promise<{ data: IAcamadeciSemester | null }> => {
+  if (
+    payload.title &&
+    payload.code &&
+    academicsemesterTitleCodeMapper[payload.title] !== payload?.code
+  ) {
+    throw new Apierror(
+      httpStatus.BAD_REQUEST,
+      'please input valid title and code '
+    )
+  }
+  const result = await AcamedicSemester.findOneAndUpdate({ _id: id }, payload, {
+    new: true,
+  })
+  return {
+    data: result,
+  }
+}
+
 const GetSemesterServices = {
   createsemester,
   getAllSemesters,
+  get_single_semester,
+  updateSemesterS,
 }
 export default GetSemesterServices
