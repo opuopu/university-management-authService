@@ -6,9 +6,9 @@ import { createUser } from './user.service'
 export const createUsers: RequestHandler = catchAsync(
   async (req: Request, res: Response) => {
     // await userSchema.parseAsync(req)
-    const userdata = req.body
+    const { ...userData } = req.body
 
-    const result = await createUser(userdata)
+    const result = await createUser(userData)
     sendResponse(res, {
       statusCode: 200,
       success: true,
