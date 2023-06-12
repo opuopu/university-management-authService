@@ -1,4 +1,6 @@
+import httpStatus from 'http-status'
 import { SortOrder } from 'mongoose'
+import Apierror from '../../../error/Apierror'
 import IGenericResponse from '../../../interface/IgenericResponse'
 import { IgetAllfacultyOptions } from '../../../interface/pagination'
 import calculatePagination from '../../../shared/paginationHelper'
@@ -75,10 +77,47 @@ const getSingle_Faculty = async (
     data: result,
   }
 }
+// update
+const update_Faculty = async (
+  id: string,
+  payload: Partial<IAcademicFaculty>
+): Promise<{ data: IAcademicFaculty | null }> => {
+  //  {
+  //
+  //   }
+  const result = await AcamedicFaculty.findOneAndUpdate({ _id: id }, payload, {
+    new: true,
+  })
+  if (!result) {
+    throw new Apierror(
+      httpStatus.BAD_REQUEST,
+      'please input valid title and code '
+    )
+  }
+  return {
+    data: result,
+  }
+}
 
+// delete
+const delete_Faculty = async (
+  id: string
+): Promise<{ data: IAcademicFaculty | null }> => {
+  const result = await AcamedicFaculty.findByIdAndDelete(id)
+
+  if (!result) {
+    throw new Apierror(httpStatus.BAD_REQUEST, 'faculty not found')
+  }
+
+  return {
+    data: result,
+  }
+}
 const AcademicFacultyServices = {
   createFaculty,
   getAllfacultys,
   getSingle_Faculty,
+  update_Faculty,
+  delete_Faculty,
 }
 export default AcademicFacultyServices

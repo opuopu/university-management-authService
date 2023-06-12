@@ -10,3 +10,9 @@ export type IgetAllfacultyOptions = {
   sortBy?: string
   sortOrder?: 'asc' | 'desc'
 }
+export type IgetDepartmentOptions = {
+  page?: number
+  limit?: number
+  sortBy?: string
+  sortOrder?: 'asc' | 'desc'
+}
