@@ -14,6 +14,10 @@ const AcademicDepartmentSchema = new Schema<
       required: true,
       unique: true,
     },
+    academicFaculty: {
+      type: Schema.Types.ObjectId,
+      ref: 'AcademicFaculty',
+    },
   },
   {
     timestamps: true,
