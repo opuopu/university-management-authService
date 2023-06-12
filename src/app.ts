@@ -2,6 +2,7 @@ import cors from 'cors'
 import express, { Application, NextFunction, Request, Response } from 'express'
 import httpStatus from 'http-status'
 import globalErrorHandler from './app/middlewares/GlobalErrorHandler'
+import { GenerateStudentId } from './app/module/users/user.utils'
 import routers from './app/routes'
 export const app: Application = express()
 export const port = 3000
@@ -32,5 +33,15 @@ app.use((req: Request, res: Response, next: NextFunction) => {
   })
   next()
 })
+
+const academicSemester = {
+  title: 'Autumn',
+  code: '01',
+  year: '2025',
+  startMonth: 'January',
+  endMonth: 'May',
+}
+const test = GenerateStudentId(academicSemester)
+console.log(test)
 
 app.use(globalErrorHandler)
