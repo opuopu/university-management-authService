@@ -34,6 +34,11 @@
             "date": 1686593332901,
             "name": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\errors\\university-s-2023-06-13-00-error.log",
             "hash": "1f8a8fca5a745d3f4ba8764ff1a740b5ec7dfa02baa8ece22f0b3e26a5971717"
+        },
+        {
+            "date": 1686636598700,
+            "name": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\errors\\university-s-2023-06-13-12-error.log",
+            "hash": "a3f5e3b50e5245ca4e71019a1dc0c379f46d63ca48639866ca909a36c66dc049"
         }
     ],
     "hashType": "sha256"

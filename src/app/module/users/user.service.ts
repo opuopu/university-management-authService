@@ -1,19 +1,47 @@
+import httpStatus from 'http-status'
+import mongoose from 'mongoose'
 import config from '../../../config/index'
+import Apierror from '../../../error/Apierror'
+import AcamedicSemester from '../academic_semester/academic_semester.model'
+import { IStudent } from '../student/student.interface'
+import { Student } from '../student/student.model'
 import { Iuser } from './user.interface'
 import { user } from './user.model'
-import { generateFacultyId } from './user.utils'
-export const createUser = async (users: Iuser): Promise<Iuser | null> => {
-  const id = await generateFacultyId()
-  console.log(id)
-  users.id = id
-
+import { GenerateStudentId } from './user.utils'
+export const Create_Student = async (
+  student: IStudent,
+  users: Iuser
+): Promise<Iuser | null> => {
   if (!users.password) {
-    users.password = config.default_user_password as string
+    users.password = config.default_student_password as string
   }
+  users.role = 'student'
+  const academicsemester = await AcamedicSemester.findById(
+    student.academicSemester
+  )
 
-  const createAuser = await user.create(users)
-  if (!createAuser) {
-    throw new Error('user not created')
+  const session = await mongoose.startSession()
+  try {
+    session.startTransaction()
+    const id = await GenerateStudentId(academicsemester)
+    users.id = id
+    student.id = id
+    const createdStudent = await Student.create([student], { session })
+    if (!createdStudent.length) {
+      throw new Apierror(httpStatus.BAD_REQUEST, 'failed to create student')
+    }
+    // set student _id into user.student
+    users.student = createdStudent[0]._id
+    const createAuser = await user.create([users], { session })
+    if (!createAuser.length) {
+      throw new Apierror(httpStatus.BAD_REQUEST, 'user not created')
+    }
+    await session.commitTransaction()
+    await session.endSession()
+  } catch (error) {
+    await session.abortTransaction()
+    await session.endSession()
+    throw error
   }
-  return createAuser
+  return null
 }

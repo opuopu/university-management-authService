@@ -1,7 +1,7 @@
 import { z } from 'zod'
 import { bloodGroup, gender } from '../student/student.constants'
 
-const userSchema = z.object({
+const studentZodSchema = z.object({
   body: z.object({
     password: z.string().optional(),
     student: z.object({
@@ -90,5 +90,5 @@ const userSchema = z.object({
 })
 
 export const UserValidation = {
-  userSchema,
+  studentZodSchema,
 }

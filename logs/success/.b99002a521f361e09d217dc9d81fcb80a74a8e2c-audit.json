@@ -34,6 +34,11 @@
             "date": 1686593332874,
             "name": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\success\\university-s-2023-06-13-00-success.log",
             "hash": "0a14a661ccee20bcc9402d384a5ad0e82d8b43629dbf46d7ca300b186ed0c80a"
+        },
+        {
+            "date": 1686636598685,
+            "name": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\success\\university-s-2023-06-13-12-success.log",
+            "hash": "269ec6089eb58d3db1216e1d94a143a26346b048e9e6486a1c02457392ade9b6"
         }
     ],
     "hashType": "sha256"
