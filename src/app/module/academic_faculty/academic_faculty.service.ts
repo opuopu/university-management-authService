@@ -9,11 +9,11 @@ import {
   IAcademicFaculty,
   IgetFacultyOptions,
 } from './academic_faculty.interface'
-import AcamedicFaculty from './academic_faculty.model'
+import { default as academicFaculty } from './academic_faculty.model'
 const createFaculty = async (
   payload: IAcademicFaculty
 ): Promise<IAcademicFaculty | null> => {
-  const result = await AcamedicFaculty.create(payload)
+  const result = await academicFaculty.create(payload)
   return result
 }
 
@@ -53,11 +53,12 @@ const getAllfacultys = async (
 
   const skip = (page - 1) * limit
   const WhereCondtion = andCondition.length > 0 ? { $and: andCondition } : {}
-  const result = await AcamedicFaculty.find(WhereCondtion)
+  const result = await academicFaculty
+    .find(WhereCondtion)
     .sort(sort)
     .skip(skip)
     .limit(limit)
-  const total = await AcamedicFaculty.countDocuments()
+  const total = await academicFaculty.countDocuments()
   return {
     meta: {
       page,
@@ -72,7 +73,7 @@ const getAllfacultys = async (
 const getSingle_Faculty = async (
   id: string
 ): Promise<{ data: IAcademicFaculty | null }> => {
-  const result = await AcamedicFaculty.findById({ _id: id })
+  const result = await academicFaculty.findById({ _id: id })
   return {
     data: result,
   }
@@ -85,7 +86,7 @@ const update_Faculty = async (
   //  {
   //
   //   }
-  const result = await AcamedicFaculty.findOneAndUpdate({ _id: id }, payload, {
+  const result = await academicFaculty.findOneAndUpdate({ _id: id }, payload, {
     new: true,
   })
   if (!result) {
@@ -103,7 +104,7 @@ const update_Faculty = async (
 const delete_Faculty = async (
   id: string
 ): Promise<{ data: IAcademicFaculty | null }> => {
-  const result = await AcamedicFaculty.findByIdAndDelete(id)
+  const result = await academicFaculty.findByIdAndDelete(id)
 
   if (!result) {
     throw new Apierror(httpStatus.BAD_REQUEST, 'faculty not found')

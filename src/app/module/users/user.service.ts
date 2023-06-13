@@ -8,10 +8,12 @@ import { Student } from '../student/student.model'
 import { Iuser } from './user.interface'
 import { user } from './user.model'
 import { GenerateStudentId } from './user.utils'
+
 export const Create_Student = async (
   student: IStudent,
   users: Iuser
 ): Promise<Iuser | null> => {
+  let newUserAllData = null
   if (!users.password) {
     users.password = config.default_student_password as string
   }
@@ -36,6 +38,7 @@ export const Create_Student = async (
     if (!createAuser.length) {
       throw new Apierror(httpStatus.BAD_REQUEST, 'user not created')
     }
+    newUserAllData = createAuser[0]
     await session.commitTransaction()
     await session.endSession()
   } catch (error) {
@@ -43,5 +46,22 @@ export const Create_Student = async (
     await session.endSession()
     throw error
   }
-  return null
+  if (newUserAllData) {
+    newUserAllData = await user.findOne({ id: newUserAllData.id }).populate({
+      path: 'student',
+      populate: [
+        {
+          path: 'academicSemester',
+        },
+        {
+          path: 'academicDepartment',
+        },
+        {
+          path: 'academicFaculty',
+        },
+      ],
+    })
+  }
+
+  return newUserAllData
 }

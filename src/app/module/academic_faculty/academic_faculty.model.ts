@@ -19,8 +19,8 @@ const AcademicFacultySchema = new Schema<
     timestamps: true,
   }
 )
-const AcamedicFaculty = model<IAcademicFaculty, AcademicFacultyModel>(
-  'AcademicFaculty',
+const academicFaculty = model<IAcademicFaculty, AcademicFacultyModel>(
+  'academicFaculty',
   AcademicFacultySchema
 )
-export default AcamedicFaculty
+export default academicFaculty

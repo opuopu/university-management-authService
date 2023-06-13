@@ -8,19 +8,16 @@ const userSchema = new Schema<Iuser, UserModel>(
     password: { required: true, type: String },
     student: {
       type: Schema.Types.ObjectId,
-      required: true,
 
       ref: 'Student',
     },
     faculty: {
       type: Schema.Types.ObjectId,
-      required: true,
 
       ref: 'Faculty',
     },
     admin: {
       type: Schema.Types.ObjectId,
-      required: true,
 
       ref: 'Admin',
     },
