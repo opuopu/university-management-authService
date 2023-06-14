@@ -69,9 +69,9 @@ const getAllDepartments = async (
 const createDepartment = async (
   payload: IAcademicDepartment
 ): Promise<IAcademicDepartment | null> => {
-  const result = (await AcademicDepartment.create(payload)).populate(
-    'academicFaculty'
-  )
+  const createDepartment = await AcademicDepartment.create(payload)
+  const result = createDepartment.populate('AcademicFaculty')
+
   return result
 }
 
