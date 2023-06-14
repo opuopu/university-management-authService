@@ -42,6 +42,6 @@ export const generateFacultyId = async (): Promise<string> => {
     .toString()
     .padStart(5, '0')
   const finalId = `F-${incrementFacultyId}`
-  console.log(finalId)
+
   return finalId
 }

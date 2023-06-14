@@ -8,7 +8,7 @@ const router = express.Router()
 
 const moduleRoutes = [
   {
-    path: '/users',
+    path: '/users/student',
     route: usersRoutes,
   },
   {
@@ -26,6 +26,10 @@ const moduleRoutes = [
   {
     path: '/student',
     route: StudentRoutes,
+  },
+  {
+    path: '/users/faculty',
+    route: usersRoutes,
   },
 ]
 
