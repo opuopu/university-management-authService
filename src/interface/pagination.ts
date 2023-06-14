@@ -16,3 +16,9 @@ export type IgetDepartmentOptions = {
   sortBy?: string
   sortOrder?: 'asc' | 'desc'
 }
+export type IgetStudentOptions = {
+  page?: number
+  limit?: number
+  sortBy?: string
+  sortOrder?: 'asc' | 'desc'
+}
