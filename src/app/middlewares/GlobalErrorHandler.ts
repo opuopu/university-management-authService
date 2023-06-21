@@ -6,6 +6,7 @@ import handleCastError from '../../error/handleCastError'
 import handleValidationError from '../../error/handleValidationError '
 
 import handleZodError from '../../error/handleZodError'
+import handleDuplicateKeyError from '../../error/handleduplicateKeyerror'
 import { IGenericErrorMessage } from '../../interface/error'
 const globalErrorHandler: ErrorRequestHandler = (
   error,
@@ -26,6 +27,11 @@ const globalErrorHandler: ErrorRequestHandler = (
     erromessages = simplifiederror.errormessages
   } else if (error?.name === 'CastError') {
     const simplifiederror = handleCastError(error)
+    statusCode = simplifiederror.statusCode
+    message = simplifiederror.message
+    erromessages = simplifiederror.errormessages
+  } else if (error.code === 11000) {
+    const simplifiederror = handleDuplicateKeyError(error)
     statusCode = simplifiederror.statusCode
     message = simplifiederror.message
     erromessages = simplifiederror.errormessages

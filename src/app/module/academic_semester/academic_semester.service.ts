@@ -26,7 +26,7 @@ const createsemester = async (
 const getAllSemesters = async (
   payload: IgetAllSemesterOptions,
   filters: IacademicSemesterFilters
-): Promise<IGenericResponse<IAcamadeciSemester[]>> => {
+): Promise<IGenericResponse<IAcamadeciSemester[] | null>> => {
   // const { page = 1, limit = 10 } = payload
   const invoked = calculatePagination(payload)
   const { searchTerm, ...filtersField } = filters

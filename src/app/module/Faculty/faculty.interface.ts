@@ -35,3 +35,6 @@ export type IFaculty = {
   profileImage?: string
 }
 export type FacultyModel = Model<IFaculty, Record<string, unknown>>
+export type IAcademicFacultyFilters = {
+  searchTerm?: string
+}
