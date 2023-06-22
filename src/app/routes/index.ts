@@ -34,12 +34,20 @@ const moduleRoutes = [
     route: usersRoutes,
   },
   {
+    path: '/create-faculty',
+    route: usersRoutes,
+  },
+  {
     path: 'managementDepartment',
     route: ManagementDepartmentRoutes,
   },
   {
     path: 'admin',
     route: AdminRoutes,
+  },
+  {
+    path: 'create-admin',
+    route: usersRoutes,
   },
 ]
 
