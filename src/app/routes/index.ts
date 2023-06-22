@@ -3,6 +3,7 @@ import AcademicDepartmentRoute from '../module/academic_department/academic_depa
 import { FacultyRoute } from '../module/academic_faculty/academic_faculty.route'
 import { semesterRoutes } from '../module/academic_semester/academic.semester.route'
 import { AdminRoutes } from '../module/admin/admin.route'
+import authRoute from '../module/auth/auth.route'
 import { ManagementDepartmentRoutes } from '../module/managementDepartment/managementDepartment.route'
 import { StudentRoutes } from '../module/student/student.route'
 import { router as usersRoutes } from '../module/users/user.route'
@@ -48,6 +49,10 @@ const moduleRoutes = [
   {
     path: 'create-admin',
     route: usersRoutes,
+  },
+  {
+    path: 'auth',
+    route: authRoute,
   },
 ]
 
