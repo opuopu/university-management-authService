@@ -25,6 +25,8 @@ export const Create_Student = async (
   if (!users.password) {
     users.password = config.default_student_password as string
   }
+  // hash my password
+  // users.password =  await bcrypt.hash(users.password,Number(config.bcrypt_salt_round))
   users.role = 'student'
   const academicsemester = await AcamedicSemester.findById(
     student.academicSemester
