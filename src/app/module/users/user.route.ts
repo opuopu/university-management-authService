@@ -14,3 +14,8 @@ router.post(
   validateRequest(UserValidation.FacultyzodSchema),
   CreateUserFaculty
 )
+router.post(
+  '/createAdmin',
+  validateRequest(UserValidation.createAdminZodSchema),
+  CreateUserFaculty
+)

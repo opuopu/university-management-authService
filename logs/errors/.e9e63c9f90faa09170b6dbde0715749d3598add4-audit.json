@@ -6,24 +6,29 @@
     "auditLog": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\errors\\.e9e63c9f90faa09170b6dbde0715749d3598add4-audit.json",
     "files": [
         {
-            "date": 1686679613415,
-            "name": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\errors\\university-s-2023-06-14-00-error.log",
-            "hash": "2fb0e872add4198146a893228a0678d620a6707e6a63b2300d8febbf927736cd"
+            "date": 1687450437412,
+            "name": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\errors\\university-s-2023-06-22-22-error.log",
+            "hash": "7db197d2a1a20f1306e117e7b2260fbbef39e70cee4bacb362c1b2c97d27f9ef"
         },
         {
-            "date": 1686760020757,
-            "name": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\errors\\university-s-2023-06-14-22-error.log",
-            "hash": "30981edb7fbb89db8e7aab5056bfa04a9af92d40404fc4d133b81e2725e17fea"
+            "date": 1687508046875,
+            "name": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\errors\\university-s-2023-06-23-14-error.log",
+            "hash": "301b9ad6390b399b78630839e9a01b9d1169a86ea4c835616f1e1b31b60d7903"
         },
         {
-            "date": 1686763731802,
-            "name": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\errors\\university-s-2023-06-14-23-error.log",
-            "hash": "69d6ff50c61e17b4be3a57b8b09cd5d4156cfd50916ed7b5344e6b3c92b26c65"
+            "date": 1687510802858,
+            "name": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\errors\\university-s-2023-06-23-15-error.log",
+            "hash": "e3a755cf8857597c2272a981ad731a3c3501ae5694d1e3fbd4e8f7ca89c2c9cc"
         },
         {
-            "date": 1686765659839,
-            "name": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\errors\\university-s-2023-06-15-00-error.log",
-            "hash": "e85f239e96767b80595427838c6f9d6976ba2ca25f6075c54e0d962405d7f0a9"
+            "date": 1687514410396,
+            "name": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\errors\\university-s-2023-06-23-16-error.log",
+            "hash": "48a09733779fb3a083438e5cf6bbd26eb5db7b615e3fbcfac88b04742f98ec7a"
+        },
+        {
+            "date": 1687518181737,
+            "name": "D:\\web-2\\milestone-3 university-project\\university-management-auth-service\\logs\\errors\\university-s-2023-06-23-17-error.log",
+            "hash": "55c3764606fdac916d860bf428872f346e02ec4e0942aeaaa63bd59168a1e8b6"
         }
     ],
     "hashType": "sha256"

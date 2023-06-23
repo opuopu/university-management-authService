@@ -9,4 +9,12 @@ export default {
   dbUrl: process.env.DATABASE_URL,
   default_student_password: process.env.DEFAULT_STUDENT_PASSWORD,
   default_faculty_password: process.env.DEFAULT_FACULTY_PASSWORD,
+  default_admin_password: process.env.DEFAULT_ADMIN_PASSWORD,
+  bcrypt_salt_round: process.env.BCRYPT_SALT_ROUND,
+  jwt: {
+    secret: process.env.JWT_SECRET,
+    refresh_secret: process.env.JWT_REFRESH_SECRET,
+    jwt_expires_in: process.env.JWT_EXPIRES_IN,
+    refresh_expires_In: process.env.JWT_REFRESH_EXPIRES_IN,
+  },
 }

@@ -23,6 +23,8 @@ export const createAcademicFaculty = catchAsync(
 )
 // get faculty
 const getAllFaculty = catchAsync(async (req: Request, res: Response) => {
+  console.log(req.headers.authorization)
+  console.log(req.user)
   const filters = pick(req.query, filterableField)
   const paginationOptions: IgetAllfacultyOptions = pick(req.query, items)
   const result = await AcademicFacultyServices.getAllfacultys(

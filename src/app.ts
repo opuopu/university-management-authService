@@ -1,3 +1,4 @@
+import cookieParser from 'cookie-parser'
 import cors from 'cors'
 import express, { Application, NextFunction, Request, Response } from 'express'
 import httpStatus from 'http-status'
@@ -7,6 +8,7 @@ export const app: Application = express()
 export const port = 3000
 app.use(cors())
 app.use(express.json())
+app.use(cookieParser())
 app.use(express.urlencoded({ extended: true }))
 
 app.use('/api/v1', routers)
@@ -16,6 +18,7 @@ app.use('/api/v1', routers)
 app.get('/', async (req, res) => {
   // res.send('database connected')
   res.send('working ')
+  console.log('Cookies: ', req.cookies)
 })
 
 // NOT FOUND ERROR
