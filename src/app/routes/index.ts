@@ -11,7 +11,7 @@ const router = express.Router()
 
 const moduleRoutes = [
   {
-    path: '/users/student',
+    path: '/create-student',
     route: usersRoutes,
   },
   {
@@ -39,19 +39,19 @@ const moduleRoutes = [
     route: usersRoutes,
   },
   {
-    path: 'managementDepartment',
+    path: '/managementDepartment',
     route: ManagementDepartmentRoutes,
   },
   {
-    path: 'admin',
+    path: '/admin',
     route: AdminRoutes,
   },
   {
-    path: 'create-admin',
+    path: '/create-admin',
     route: usersRoutes,
   },
   {
-    path: 'auth',
+    path: '/auth',
     route: authRoute,
   },
 ]

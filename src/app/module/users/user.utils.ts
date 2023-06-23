@@ -11,17 +11,31 @@ export const findLastStudentId = async () => {
   return lastStudent?.id ? lastStudent.id.substring(4) : null
 }
 
+// export const GenerateStudentId = async (
+//   academicSemester: IAcamadeciSemester | null
+// ) => {
+//   const currentid = (await findLastStudentId()) || (0).toString()
+//   const incrementStudentid = (parseInt(currentid) + 1)
+//     .toString()
+//     .padStart(5, '0')
+//   const finalId = `${academicSemester?.year.substring(2)}${
+//     academicSemester?.code
+//   }${incrementStudentid}`
+//   // console.log(finalId)
+//   return finalId
+// }
 export const GenerateStudentId = async (
   academicSemester: IAcamadeciSemester | null
 ) => {
+  console.log(academicSemester) // Add this line to check the value of academicSemester
   const currentid = (await findLastStudentId()) || (0).toString()
   const incrementStudentid = (parseInt(currentid) + 1)
     .toString()
     .padStart(5, '0')
-  const finalId = `${academicSemester?.year.substring(2)}${
+  const finalId = `${academicSemester?.year?.substring(2)}${
     academicSemester?.code
   }${incrementStudentid}`
-  // console.log(finalId)
+  console.log(finalId) // Add this line to check the generated finalId
   return finalId
 }
 
