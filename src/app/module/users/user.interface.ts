@@ -7,6 +7,7 @@ export type Iuser = {
   needPasswordChange: true | false
   role: string
   password: string
+  passwordChangeAt?: Date
   student?: Types.ObjectId | IStudent
   faculty?: Types.ObjectId | IAcademicFaculty
   admin?: Types.ObjectId

@@ -12,6 +12,9 @@ const userSchema = new Schema<Iuser, UserModel, IUserMethods>(
 
       ref: 'Student',
     },
+    passwordChangeAt: {
+      type: Date,
+    },
     needPasswordChange: {
       required: true,
       type: 'Boolean',
