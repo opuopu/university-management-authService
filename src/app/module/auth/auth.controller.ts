@@ -1,6 +1,7 @@
 import catchAsync from '../../../shared/catchAsync'
 
 import { Request, Response } from 'express'
+import { JwtPayload } from 'jsonwebtoken'
 import config from '../../../config'
 import sendResponse from '../../../shared/sendResponse'
 import { resultResponse } from './auth.interface'
@@ -24,6 +25,21 @@ const loginUser = catchAsync(async (req: Request, res: Response) => {
   })
 })
 
+// change password
+const changePassword = catchAsync(async (req: Request, res: Response) => {
+  const { ...passwordData } = req.body
+  const result = await Authservice.changepassword(
+    passwordData,
+    req.user as JwtPayload
+  )
+  sendResponse(res, {
+    statusCode: 200,
+    success: true,
+    message: 'password changed successfully',
+    data: result,
+  })
+})
+
 const refreshToken = catchAsync(async (req: Request, res: Response) => {
   const { refreshToken } = req.cookies
   const result = await Authservice.refreshToken(refreshToken)
@@ -43,5 +59,6 @@ const refreshToken = catchAsync(async (req: Request, res: Response) => {
 const authController = {
   loginUser,
   refreshToken,
+  changePassword,
 }
 export default authController

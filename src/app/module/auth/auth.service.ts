@@ -2,12 +2,12 @@
 import httpStatus from 'http-status'
 import Apierror from '../../../error/Apierror'
 
-import { Secret } from 'jsonwebtoken'
+import bcrypt from 'bcrypt'
+import { JwtPayload, Secret } from 'jsonwebtoken'
 import config from '../../../config'
 import { jwthelper } from '../../../shared/jwthelper'
 import { user } from '../users/user.model'
-import { ILoginUser } from './auth.interface'
-
+import { IChangePassword, ILoginUser } from './auth.interface'
 const loginuser = async (payload: ILoginUser) => {
   const { id, password } = payload
   //   createing instance of user
@@ -84,8 +84,43 @@ const refreshToken = async (token: string) => {
   }
 }
 
+// change password
+
+const changepassword = async (
+  passwordData: IChangePassword,
+  userdata: JwtPayload
+): Promise<void> => {
+  const { oldPassword, newPassword } = passwordData
+  const users = new user()
+  const isuserExist = await users.isUserExist(userdata.id)
+  if (!isuserExist) {
+    throw new Apierror(httpStatus.NOT_FOUND, 'user not found')
+  }
+  if (
+    isuserExist.password &&
+    !(await users.isPassWordMatched(oldPassword, isuserExist.password))
+  ) {
+    throw new Apierror(httpStatus.UNAUTHORIZED, 'password did not matched')
+  }
+
+  // hash password before saving
+  const newhasPassword = await bcrypt.hash(
+    newPassword,
+    Number(config.bcrypt_salt_round)
+  )
+  // update password
+  await user.findOneAndUpdate(
+    { id: userdata.id },
+    {
+      password: newhasPassword,
+      needPasswordChange: false,
+      passwordChangeAt: new Date(),
+    }
+  )
+}
 const Authservice = {
   loginuser,
   refreshToken,
+  changepassword,
 }
 export default Authservice
