@@ -1,0 +1,24 @@
+{
+  message: 'database connected',
+  level: 'info',
+  timestamp: '2023-09-14T15:58:33.870Z',
+  label: 'PH'
+}
+{
+  message: 'database connected',
+  level: 'info',
+  timestamp: '2023-09-14T15:59:11.924Z',
+  label: 'PH'
+}
+{
+  message: 'database connected',
+  level: 'info',
+  timestamp: '2023-09-14T15:59:39.452Z',
+  label: 'PH'
+}
+{
+  message: 'application listening on port 3005',
+  level: 'info',
+  timestamp: '2023-09-14T15:59:39.465Z',
+  label: 'PH'
+}

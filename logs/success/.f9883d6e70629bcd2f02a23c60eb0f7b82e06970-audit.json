@@ -1,0 +1,25 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 1
+    },
+    "auditLog": "D:\\web-2\\api-gateway-redis\\university-management-authService\\logs\\success\\.f9883d6e70629bcd2f02a23c60eb0f7b82e06970-audit.json",
+    "files": [
+        {
+            "date": 1694668582337,
+            "name": "D:\\web-2\\api-gateway-redis\\university-management-authService\\logs\\success\\university-s-2023-09-14-11-success.log",
+            "hash": "e3b92ba5561bff7fa366865e1c3c5f30a68c89248954087dd43fc13f0b0a7779"
+        },
+        {
+            "date": 1694698080699,
+            "name": "D:\\web-2\\api-gateway-redis\\university-management-authService\\logs\\success\\university-s-2023-09-14-19-success.log",
+            "hash": "5d96ed5218fd8b4078b757e672e9748c865194e57eb65dbd2609816103574db0"
+        },
+        {
+            "date": 1694707108531,
+            "name": "D:\\web-2\\api-gateway-redis\\university-management-authService\\logs\\success\\university-s-2023-09-14-21-success.log",
+            "hash": "5e345095d37e9be5451eb336be69c7c97d97ad5542baf3eb579ebc7ca38ef825"
+        }
+    ],
+    "hashType": "sha256"
+}

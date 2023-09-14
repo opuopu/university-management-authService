@@ -3,6 +3,7 @@ import mongoose from 'mongoose'
 import { app } from './app'
 import config from './config/index'
 import { errorLogger, infoLogger } from './shared/logger'
+import { redisclient } from './shared/redis'
 
 // uncaought error
 process.on('uncaughtException', err => {
@@ -15,13 +16,14 @@ let server: Server
 
 async function main() {
   try {
+    await redisclient.connect()
     await mongoose.connect(config.dbUrl as string)
     server = app.listen(config.port, () => {
       infoLogger.info(`application listening on port ${config.port}`)
     })
     infoLogger.info('database connected')
   } catch (err) {
-    errorLogger.error('failed to connect database')
+    errorLogger.error('failed to connect database', err)
   }
 
   process.on('unhandledRejection', error => {
