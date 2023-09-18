@@ -3,6 +3,7 @@ import { paginationHelpers } from '../../../helpers/paginationHelper';
 import { IGenericResponse } from '../../../interfaces/common';
 import { IPaginationOptions } from '../../../interfaces/pagination';
 import prisma from '../../../shared/prisma';
+import { RedisClient } from '../../../shared/redis';
 import { academicDepartmentRelationalFields, academicDepartmentRelationalFieldsMapper, academicDepartmentSearchableFields } from './academicDepartment.contants';
 import { IAcademicDepartmentFilterRequest } from './academicDepartment.interface';
 
@@ -14,6 +15,9 @@ const insertIntoDB = async (data: AcademicDepartment): Promise<AcademicDepartmen
         }
     });
 
+    if(result){
+        await RedisClient.publish('academic_department_create',JSON.stringify(result))
+    }
     return result;
 };
 
@@ -113,6 +117,9 @@ const updateOneInDB = async (
             academicFaculty: true
         }
     });
+    if(result){
+        RedisClient.publish('academic_department_update',JSON.stringify(result))
+    }
     return result;
 };
 

@@ -1,0 +1,70 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\web-2\\api-gateway-redis\\university-management-core-service\\logs\\winston\\errors\\.d9750043ab53b800f3d2a58589be096a5759d2fa-audit.json",
+    "files": [
+        {
+            "date": 1694670375794,
+            "name": "D:\\web-2\\api-gateway-redis\\university-management-core-service\\logs\\winston\\errors\\phu-2023-14-09-11-error.log",
+            "hash": "41b07e80fc66fa91a82bbb55e9f02a4dfccb2554e089562cc11392ce1b762af4"
+        },
+        {
+            "date": 1694698113754,
+            "name": "D:\\web-2\\api-gateway-redis\\university-management-core-service\\logs\\winston\\errors\\phu-2023-14-09-19-error.log",
+            "hash": "c06a097826bff7ed62107ef634ed20c67566dda43e07a2e8593101a5cae77b82"
+        },
+        {
+            "date": 1694707400349,
+            "name": "D:\\web-2\\api-gateway-redis\\university-management-core-service\\logs\\winston\\errors\\phu-2023-14-09-22-error.log",
+            "hash": "a39497e284a4ddc534d3737d8334f8fb27c9395a46c0d050bff501c344e70c2e"
+        },
+        {
+            "date": 1694867423413,
+            "name": "D:\\web-2\\api-gateway-redis\\university-management-core-service\\logs\\winston\\errors\\phu-2023-16-09-18-error.log",
+            "hash": "84b691611a9911f42d6ae39eb00c7c6399027eac7a15d46ebf7436f8ec7a6c4f"
+        },
+        {
+            "date": 1694869711425,
+            "name": "D:\\web-2\\api-gateway-redis\\university-management-core-service\\logs\\winston\\errors\\phu-2023-16-09-19-error.log",
+            "hash": "b24cdbf4c640481e26a54e62e783a0bf51ac91dc178da380a1ffb38e927a9d3b"
+        },
+        {
+            "date": 1694954544160,
+            "name": "D:\\web-2\\api-gateway-redis\\university-management-core-service\\logs\\winston\\errors\\phu-2023-17-09-18-error.log",
+            "hash": "9da4d7c06ce4a9cb089c8316f2cf5e89b028ba1ac0d6d2586f5d0fb73b810342"
+        },
+        {
+            "date": 1694955981605,
+            "name": "D:\\web-2\\api-gateway-redis\\university-management-core-service\\logs\\winston\\errors\\phu-2023-17-09-19-error.log",
+            "hash": "0d5676c05c605ffd5b35cb4672aebeff06325240784fea6d21423a1956c24a1c"
+        },
+        {
+            "date": 1694959212674,
+            "name": "D:\\web-2\\api-gateway-redis\\university-management-core-service\\logs\\winston\\errors\\phu-2023-17-09-20-error.log",
+            "hash": "2019bedc12edd2b6cedc5ae169706909be02dc812d748adbfe7a7b69d6f85b61"
+        },
+        {
+            "date": 1694964437613,
+            "name": "D:\\web-2\\api-gateway-redis\\university-management-core-service\\logs\\winston\\errors\\phu-2023-17-09-21-error.log",
+            "hash": "d4441bad81d78b7d458c77b865179e54cfa8524971afcccaeb1d62fb073c3c46"
+        },
+        {
+            "date": 1694967030112,
+            "name": "D:\\web-2\\api-gateway-redis\\university-management-core-service\\logs\\winston\\errors\\phu-2023-17-09-22-error.log",
+            "hash": "711a860a67dc89fa4fb1004b9cd257f27a781d4dadc25d1924de32fd5d0dcf03"
+        },
+        {
+            "date": 1695008353956,
+            "name": "D:\\web-2\\api-gateway-redis\\university-management-core-service\\logs\\winston\\errors\\phu-2023-18-09-09-error.log",
+            "hash": "fe684a8e3608c30f587504a717e3b8fb8f431d54636653d2dd5e82a5b9ed0184"
+        },
+        {
+            "date": 1695010630751,
+            "name": "D:\\web-2\\api-gateway-redis\\university-management-core-service\\logs\\winston\\errors\\phu-2023-18-09-10-error.log",
+            "hash": "adc72eeacd33c6f32571b82c8d6a7d86f8604e48dfee32c0867adc517acdab3f"
+        }
+    ],
+    "hashType": "sha256"
+}

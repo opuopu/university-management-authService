@@ -43,6 +43,7 @@ const globalErrorHandler: ErrorRequestHandler = (
     message = simplifiedError.message;
     errorMessages = simplifiedError.errorMessages;
   } else if (error instanceof ApiError) {
+    
     statusCode = error?.statusCode;
     message = error.message;
     errorMessages = error?.message
@@ -64,6 +65,7 @@ const globalErrorHandler: ErrorRequestHandler = (
       ]
       : [];
   }
+  console.log(statusCode)
 
   res.status(statusCode).json({
     success: false,

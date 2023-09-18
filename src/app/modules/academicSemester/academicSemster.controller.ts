@@ -8,6 +8,7 @@ import { AcademicSemesterService } from "./academicSemester.service";
 import { AcademicSemesterFilterAbleFileds } from "./academicSemeter.contants";
 
 const insertIntoDB = catchAsync(async (req: Request, res: Response) => {
+    
     const result = await AcademicSemesterService.insertIntoDB(req.body);
     sendResponse<AcademicSemester>(res, {
         statusCode: httpStatus.OK,
