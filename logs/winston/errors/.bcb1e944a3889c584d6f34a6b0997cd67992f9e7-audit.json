@@ -1,0 +1,15 @@
+{
+    "keep": {
+        "days": true,
+        "amount": 14
+    },
+    "auditLog": "D:\\web-2\\api-gateway-redis\\university-management-auth-service\\logs\\winston\\errors\\.bcb1e944a3889c584d6f34a6b0997cd67992f9e7-audit.json",
+    "files": [
+        {
+            "date": 1694959732238,
+            "name": "D:\\web-2\\api-gateway-redis\\university-management-auth-service\\logs\\winston\\errors\\phu-2023-17-09-20-error.log",
+            "hash": "9d350d9266fee99298ba1eae9826aa9d687cbaae04920ee6955fd85b3e6cf159"
+        }
+    ],
+    "hashType": "sha256"
+}
