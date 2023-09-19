@@ -2,6 +2,7 @@ import httpStatus from 'http-status';
 import mongoose from 'mongoose';
 import config from '../../../config/index';
 import ApiError from '../../../errors/ApiError';
+import { RedisClient } from '../../../shared/redis';
 import { IAcademicSemester } from '../academicSemester/academicSemester.interface';
 import { AcademicSemester } from '../academicSemester/academicSemester.model';
 import { IAdmin } from '../admin/admin.interface';
@@ -60,6 +61,12 @@ const createStudent = async (
     }
     newUserAllData = newUser[0];
 
+    if (newUserAllData) {
+      await RedisClient.publish(
+        'create_student_event',
+        JSON.stringify(newUserAllData.student)
+      );
+    }
     await session.commitTransaction();
     await session.endSession();
   } catch (error) {
