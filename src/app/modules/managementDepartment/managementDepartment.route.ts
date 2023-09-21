@@ -12,7 +12,7 @@ router.post(
   validateRequest(
     ManagementDepartmentValidation.createManagementDepartmentZodSchema
   ),
-  auth(ENUM_USER_ROLE.SUPER_ADMIN, ENUM_USER_ROLE.ADMIN),
+  // auth(ENUM_USER_ROLE.SUPER_ADMIN, ENUM_USER_ROLE.ADMIN),
   ManagementDepartmentController.createDepartment
 );
 

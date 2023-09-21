@@ -54,6 +54,7 @@ const loginUser = async (payload: ILoginUser): Promise<ILoginUserResponse> => {
 };
 
 const refreshToken = async (token: string): Promise<IRefreshTokenResponse> => {
+  console.log('token', token);
   //verify token
   // invalid token - synchronous
   let verifiedToken = null;

@@ -9,6 +9,36 @@
             "date": 1694959732238,
             "name": "D:\\web-2\\api-gateway-redis\\university-management-auth-service\\logs\\winston\\errors\\phu-2023-17-09-20-error.log",
             "hash": "9d350d9266fee99298ba1eae9826aa9d687cbaae04920ee6955fd85b3e6cf159"
+        },
+        {
+            "date": 1695182178443,
+            "name": "D:\\web-2\\api-gateway-redis\\university-management-auth-service\\logs\\winston\\errors\\phu-2023-20-09-09-error.log",
+            "hash": "ae89147b4686ad366a72603795e2da29e80a36c721337ff0c082caf95f10be77"
+        },
+        {
+            "date": 1695182509173,
+            "name": "D:\\web-2\\api-gateway-redis\\university-management-auth-service\\logs\\winston\\errors\\phu-2023-20-09-10-error.log",
+            "hash": "f7dfe1523a2da70a660125e2c8d615837345c270aab8a7f66f5b00002c1bafae"
+        },
+        {
+            "date": 1695187105547,
+            "name": "D:\\web-2\\api-gateway-redis\\university-management-auth-service\\logs\\winston\\errors\\phu-2023-20-09-11-error.log",
+            "hash": "81df3d163adf2adce8c3ab47045a0baed064377591b16c8738ee79b44fac490a"
+        },
+        {
+            "date": 1695267644557,
+            "name": "D:\\web-2\\api-gateway-redis\\university-management-auth-service\\logs\\winston\\errors\\phu-2023-21-09-09-error.log",
+            "hash": "45f55a0875c513ee8422dd3991bbd1de7bcfa13c418360659d88317cad529ecd"
+        },
+        {
+            "date": 1695282112205,
+            "name": "D:\\web-2\\api-gateway-redis\\university-management-auth-service\\logs\\winston\\errors\\phu-2023-21-09-13-error.log",
+            "hash": "2cfe9aa04a915db1935865d599c9cd6dbefecd5e91491300afdcd33147d3caa7"
+        },
+        {
+            "date": 1695283319813,
+            "name": "D:\\web-2\\api-gateway-redis\\university-management-auth-service\\logs\\winston\\errors\\phu-2023-21-09-14-error.log",
+            "hash": "c07cc78dc70870e189d60cb4576d4f0030c0b5aec59da3b8ff1f6c8f15f58eb6"
         }
     ],
     "hashType": "sha256"
