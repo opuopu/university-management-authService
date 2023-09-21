@@ -54,7 +54,6 @@ const loginUser = async (payload: ILoginUser): Promise<ILoginUserResponse> => {
 };
 
 const refreshToken = async (token: string): Promise<IRefreshTokenResponse> => {
-  console.log('token', token);
   //verify token
   // invalid token - synchronous
   let verifiedToken = null;
@@ -86,9 +85,18 @@ const refreshToken = async (token: string): Promise<IRefreshTokenResponse> => {
     config.jwt.secret as Secret,
     config.jwt.expires_in as string
   );
+  const newrefreshToken = jwtHelpers.createToken(
+    {
+      id: isUserExist.id,
+      role: isUserExist.role,
+    },
+    config.jwt.secret as Secret,
+    config.jwt.expires_in as string
+  );
 
   return {
     accessToken: newAccessToken,
+    refreshToken: newrefreshToken,
   };
 };
 

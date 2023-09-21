@@ -39,6 +39,11 @@
             "date": 1695283319813,
             "name": "D:\\web-2\\api-gateway-redis\\university-management-auth-service\\logs\\winston\\errors\\phu-2023-21-09-14-error.log",
             "hash": "c07cc78dc70870e189d60cb4576d4f0030c0b5aec59da3b8ff1f6c8f15f58eb6"
+        },
+        {
+            "date": 1695286855088,
+            "name": "D:\\web-2\\api-gateway-redis\\university-management-auth-service\\logs\\winston\\errors\\phu-2023-21-09-15-error.log",
+            "hash": "cee40ed3a03ea0943c0b505e2ef90ced89d4b9c4cf70a244b26a2eb69bdcc49e"
         }
     ],
     "hashType": "sha256"
