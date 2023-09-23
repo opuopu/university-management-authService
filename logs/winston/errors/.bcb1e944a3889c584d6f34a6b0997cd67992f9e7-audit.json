@@ -44,6 +44,16 @@
             "date": 1695286855088,
             "name": "D:\\web-2\\api-gateway-redis\\university-management-auth-service\\logs\\winston\\errors\\phu-2023-21-09-15-error.log",
             "hash": "cee40ed3a03ea0943c0b505e2ef90ced89d4b9c4cf70a244b26a2eb69bdcc49e"
+        },
+        {
+            "date": 1695312090676,
+            "name": "D:\\web-2\\api-gateway-redis\\university-management-auth-service\\logs\\winston\\errors\\phu-2023-21-09-22-error.log",
+            "hash": "e46e1e25df63a52e8cd473882200da326f2663fc596ba51dfc5d52607dd48cae"
+        },
+        {
+            "date": 1695397557374,
+            "name": "D:\\web-2\\api-gateway-redis\\university-management-auth-service\\logs\\winston\\errors\\phu-2023-22-09-21-error.log",
+            "hash": "e2b16328d921e6e90936939842d39e63a9ad2a990e8b4bcb1a38e9b4215ab840"
         }
     ],
     "hashType": "sha256"

@@ -105,6 +105,7 @@ const changePassword = async (
   payload: IChangePassword
 ): Promise<void> => {
   const { oldPassword, newPassword } = payload;
+  console.log(oldPassword, newPassword);
 
   // // checking is user exist
   // const isUserExist = await User.isUserExist(user?.userId);
